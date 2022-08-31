@@ -4,7 +4,7 @@ from django.db import models
 from pyexpat import model
 
 
-class Thread(model.Model):
+class Thread(models.Model):
     thread_text = models.CharField(max_length=255)
     pub_date = models.DateTimeField('date published')
     latest_date = models.DateTimeField('date published')
