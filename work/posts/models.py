@@ -1,8 +1,8 @@
 import datetime
 from msilib.schema import AdminExecuteSequence
+from time import timezone
 from django.db import models
-from pyexpat import model
-
+from django.contrib import admin
 
 class Thread(models.Model):
     thread_text = models.CharField(max_length=255)
@@ -31,7 +31,7 @@ class Thread(models.Model):
         else:
             return self.thread_text
 
-    @ AdminExecuteSequence.display(
+    @ admin.display(
         boolean=True,
         ordering='pub_date',
         description='Published recently?',
