@@ -8,6 +8,8 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 from django.http import HttpResponse
 
+def index(request):
+    return render("board/index.html")
 
 def create_thread(request):
     try:
@@ -51,3 +53,4 @@ def tweet(request, thread_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('board:results', args=(thread.id,)))
+    
